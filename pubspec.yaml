@@ -72,6 +72,7 @@ flutter:
      - assets/icons/Eye.svg
      - assets/icons/warningOtp.svg
      - assets/icons/onbording.svg
+     - assets/images/onboarding.png
 
   fonts:
     - family: FingerPaint

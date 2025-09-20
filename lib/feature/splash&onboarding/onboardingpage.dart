@@ -37,10 +37,11 @@ class OnBoardingPage extends StatelessWidget {
           children: [
             SizedBox(height: 74.h),
             Center(
-              child: CustomSvg(
-                path: "assets/icons/onbording.svg",
+              child: Image.asset(
+                "assets/images/onboarding.png",
                 width: 329.w,
                 height: 330.h,
+                fit: BoxFit.contain,
               ),
             ),
             SizedBox(height: 84.h),
