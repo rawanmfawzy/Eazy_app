@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:eazy_app/feature/Joining_flow/update.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -78,11 +79,11 @@ class _OtpToUpdatePasswordScreenState extends State<OtpToUpdatePasswordScreen> {
         hasError = false;
         errorMessage = "";
       });
-      // MyNavigator.goTo(
-      //   context,
-      //   const UpdatePasswordScreen(),
-      //   type: NavigatorType.pushReplacement,
-      // );
+      MyNavigator.goTo(
+        context,
+        const UpdatePassword(),
+        type: NavigatorType.pushReplacement,
+      );
     }
   }
 

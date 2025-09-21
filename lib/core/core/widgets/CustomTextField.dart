@@ -14,6 +14,7 @@ class CustomTextField extends StatelessWidget {
   final double height;
   final Color? backgroundColor;
   final VoidCallback? onIconTap;
+  final Widget? prefixIcon;
   final String? Function(String?)? validator;
 
   const CustomTextField({
@@ -28,6 +29,7 @@ class CustomTextField extends StatelessWidget {
     this.height = 56,
     this.backgroundColor,
     this.onIconTap,
+    this.prefixIcon,
     this.validator,
   });
 
@@ -70,20 +72,21 @@ class CustomTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(12.r),
             borderSide: const BorderSide(color: Colors.blue),
           ),
-          prefixIcon: iconPath != null
-              ? GestureDetector(
-            onTap: onIconTap,
-            child: Padding(
-              padding: EdgeInsets.only(left: 16.w, right: 8.w),
-              child: CustomSvg(
-                path: iconPath!,
-                width: 24.w,
-                height: 24.h,
-                color: iconColor,
-              ),
-            ),
-          )
-              : null,
+          prefixIcon: prefixIcon ??
+              (iconPath != null
+                  ? GestureDetector(
+                onTap: onIconTap,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 16.w, right: 8.w),
+                  child: CustomSvg(
+                    path: iconPath!,
+                    width: 24.w,
+                    height: 24.h,
+                    color: iconColor,
+                  ),
+                ),
+              )
+                  : null),
         ),
       ),
     );
