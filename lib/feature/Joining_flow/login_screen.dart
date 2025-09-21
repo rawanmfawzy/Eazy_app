@@ -2,7 +2,6 @@ import 'package:eazy_app/feature/Joining_flow/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../core/core/helper/my_navgator.dart';
 import '../../core/core/utils/appColor.dart';
 import '../../core/core/utils/appPaddings.dart';
@@ -10,6 +9,7 @@ import '../../core/core/utils/appStyles.dart';
 import '../../core/core/widgets/CustomButton.dart';
 import '../../core/core/widgets/CustomTextField.dart';
 import '../splash&onboarding/background.dart';
+import 'forget_password.dart';
 
 class LoginState {
   final bool obscurePassword;
@@ -122,7 +122,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             children: [
                               SizedBox(width: 27.w),
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  MyNavigator.goTo(
+                                    context,
+                                    const ForgetPassword(),
+                                    type: NavigatorType.push,
+                                  );
+                                },
                                 child: Text(
                                   'نسيت كلمة المرور؟',
                                   style: AppStyles.textStyle14w700FF.copyWith(color: AppColors.gray),
